@@ -10,7 +10,6 @@
     fillSelect('cakeShape',    BB_CONFIG.cakeShapes);
     fillSelect('cakeFlavour',  BB_CONFIG.cakeFlavours);
     fillSelect('filling',      BB_CONFIG.fillings);
-    fillSelect('cakeStyle',    BB_CONFIG.cakeStyles);
     fillSelect('heardFrom',    BB_CONFIG.heardFrom);
     fillAddons(BB_CONFIG.addons);
   }

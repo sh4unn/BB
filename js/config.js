@@ -73,44 +73,30 @@ var BB_CONFIG = {
     "Oreo Crunch",
     "Biscoff Crunch",
     "Vanilla Biscuit Crunch",
-    "Fresh Raspberries",
-    "Fresh Strawberries",
-    "Seasonal Blueberries"
-  ],
-
-  cakeStyles: [
-    "Elegant & Minimalist",
-    "Rustic & Textured",
-    "Modern & Geometric",
-    "Whimsical & Playful",
-    "Floral & Botanical",
-    "Classic & Traditional",
-    "Sculpted / 3D",
-    "Vintage / Retro",
-    "I'm open to suggestions"
+    "Berries (Seasonal)"
   ],
 
   addons: [
-    "Fresh Florals",
-    "Sugar Flowers",
-    "Gold Leaf Accents",
-    "Chocolate Drip",
-    "Edible Glitter",
+    "Fresh Flowers",
     "Fresh Fruit",
-    "Custom Topper",
+    "Faux Flowers (The Faux)",
+    "Bows / Ribbon",
+    "Edible Glitter",
+    "Sprinkles",
+    "Custom Topper / Fropper",
     "Fondant Figures",
-    "Hand-painted Details",
-    "Metallic Finish"
+    "Edible Images",
+    "Candles"
   ],
 
   heardFrom: [
     "Instagram",
     "Facebook",
     "TikTok",
-    "Pinterest",
-    "Word of mouth / Recommendation",
     "Google",
-    "Wedding fair",
+    "Word of mouth / Friend",
+    "Wedding expo",
+    "Returning customer",
     "Other"
   ]
 
