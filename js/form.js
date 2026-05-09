@@ -4,16 +4,14 @@
 
   /* Populate selects from config.js */
   if (typeof BB_CONFIG !== 'undefined') {
-    fillSelect('occasion',    BB_CONFIG.occasions);
-    fillSelect('cakeType',    BB_CONFIG.cakeTypes);
-    fillSelect('serves',      BB_CONFIG.serves);
-    fillSelect('cakeShape',   BB_CONFIG.cakeShapes);
-    fillSelect('delivery',    BB_CONFIG.delivery);
-    fillSelect('sponge',      BB_CONFIG.spongeFlavours);
-    fillSelect('buttercream', BB_CONFIG.buttercreamFlavours);
-    fillSelect('filling',     BB_CONFIG.fillings);
-    fillSelect('cakeStyle',   BB_CONFIG.cakeStyles);
-    fillSelect('heardFrom',   BB_CONFIG.heardFrom);
+    fillSelect('occasion',     BB_CONFIG.occasions);
+    fillSelect('cakeSize',     BB_CONFIG.cakeSizes);
+    fillSelect('serves',       BB_CONFIG.serves);
+    fillSelect('cakeShape',    BB_CONFIG.cakeShapes);
+    fillSelect('cakeFlavour',  BB_CONFIG.cakeFlavours);
+    fillSelect('filling',      BB_CONFIG.fillings);
+    fillSelect('cakeStyle',    BB_CONFIG.cakeStyles);
+    fillSelect('heardFrom',    BB_CONFIG.heardFrom);
     fillAddons(BB_CONFIG.addons);
   }
 
@@ -50,6 +48,48 @@
   /* Min date = today */
   var dateInput = document.getElementById('eventDate');
   if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+  /* "Other" free-text reveal for Cake Size */
+  var cakeSizeSelect = document.getElementById('cakeSize');
+  var cakeSizeOther  = document.getElementById('cakeSizeOther');
+  if (cakeSizeSelect && cakeSizeOther) {
+    cakeSizeSelect.addEventListener('change', function () {
+      var show = this.value === 'Other';
+      cakeSizeOther.style.display = show ? 'block' : 'none';
+      cakeSizeOther.required = show;
+      if (!show) cakeSizeOther.value = '';
+    });
+  }
+
+  /* "Other" free-text reveal for Cake Shape */
+  var cakeShapeSelect = document.getElementById('cakeShape');
+  var cakeShapeOther  = document.getElementById('cakeShapeOther');
+  if (cakeShapeSelect && cakeShapeOther) {
+    cakeShapeSelect.addEventListener('change', function () {
+      var show = this.value === 'Other';
+      cakeShapeOther.style.display = show ? 'block' : 'none';
+      if (!show) cakeShapeOther.value = '';
+    });
+  }
+
+  /* Pickup / Drop Off toggle */
+  var btnPickup       = document.getElementById('btn-pickup');
+  var btnDropoff      = document.getElementById('btn-dropoff');
+  var deliveryValue   = document.getElementById('deliveryValue');
+  var dropoffDetails  = document.getElementById('dropoff-details');
+  var dropoffVenue    = document.getElementById('dropoffVenue');
+
+  function setDelivery(type) {
+    var isDropoff = type === 'dropoff';
+    btnPickup.classList.toggle('pickup-btn--active', !isDropoff);
+    btnDropoff.classList.toggle('pickup-btn--active', isDropoff);
+    deliveryValue.value = isDropoff ? 'Drop Off' : 'Pickup (Toowoomba)';
+    if (dropoffDetails) dropoffDetails.style.display = isDropoff ? 'block' : 'none';
+    if (dropoffVenue) { dropoffVenue.required = isDropoff; if (!isDropoff) dropoffVenue.value = ''; }
+  }
+
+  if (btnPickup)  btnPickup.addEventListener('click',  function () { setDelivery('pickup'); });
+  if (btnDropoff) btnDropoff.addEventListener('click', function () { setDelivery('dropoff'); });
 
   /* Photo previews */
   var photoInput = document.getElementById('photoInput');
@@ -89,15 +129,14 @@
 
   /* Validation */
   var fields = [
-    { inputId: 'occasion',    wrapperId: 'field-occasion' },
-    { inputId: 'eventDate',   wrapperId: 'field-event-date' },
-    { inputId: 'cakeType',    wrapperId: 'field-cake-type' },
-    { inputId: 'serves',      wrapperId: 'field-serves' },
-    { inputId: 'sponge',      wrapperId: 'field-sponge' },
-    { inputId: 'buttercream', wrapperId: 'field-buttercream' },
-    { inputId: 'fullName',    wrapperId: 'field-name' },
-    { inputId: 'phone',       wrapperId: 'field-phone' },
-    { inputId: 'email',       wrapperId: 'field-email' },
+    { inputId: 'occasion',     wrapperId: 'field-occasion' },
+    { inputId: 'eventDate',    wrapperId: 'field-event-date' },
+    { inputId: 'cakeSize',     wrapperId: 'field-cake-size' },
+    { inputId: 'serves',       wrapperId: 'field-serves' },
+    { inputId: 'cakeFlavour',  wrapperId: 'field-cake-flavour' },
+    { inputId: 'fullName',     wrapperId: 'field-name' },
+    { inputId: 'phone',        wrapperId: 'field-phone' },
+    { inputId: 'email',        wrapperId: 'field-email' },
   ];
 
   function isValid(input) {
