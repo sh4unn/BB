@@ -198,7 +198,7 @@ a { text-decoration: none; color: inherit; }
 
 .addons-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 10px; margin-top: 14px; }
 .addon-item { position: relative; }
-.addon-item input[type="checkbox"], .addon-item input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.addon-item input[type="checkbox"], .addon-item input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; appearance: none; -webkit-appearance: none; }
 .addon-label { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border: 1px solid var(--clr-border); cursor: pointer; font-size: 13px; color: var(--clr-text); user-select: none; transition: all var(--transition); }
 .addon-label::before { content: ''; flex-shrink: 0; width: 16px; height: 16px; border: 1px solid var(--clr-border); transition: all var(--transition); }
 .addon-item input:checked + .addon-label { border-color: var(--clr-primary); background: rgba(123,26,51,0.04); color: var(--clr-primary); }

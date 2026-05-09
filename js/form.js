@@ -73,16 +73,18 @@
   }
 
   /* Pickup / Drop Off toggle */
-  var dropoffDetails = document.getElementById('dropoff-details');
-  var dropoffVenue   = document.getElementById('dropoffVenue');
-  var deliveryRadios = form.querySelectorAll('input[name="delivery"]');
-  deliveryRadios.forEach(function (radio) {
-    radio.addEventListener('change', function () {
-      var isDropoff = this.value === 'Drop Off';
-      if (dropoffDetails) dropoffDetails.style.display = isDropoff ? 'block' : 'none';
-      if (dropoffVenue) { dropoffVenue.required = isDropoff; if (!isDropoff) dropoffVenue.value = ''; }
-    });
-  });
+  var dropoffDetails  = document.getElementById('dropoff-details');
+  var dropoffVenue    = document.getElementById('dropoffVenue');
+  var labelPickup     = document.querySelector('label[for="delivery-pickup"]');
+  var labelDropoff    = document.querySelector('label[for="delivery-dropoff"]');
+
+  function setDropoff(isDropoff) {
+    if (dropoffDetails) dropoffDetails.style.display = isDropoff ? 'block' : 'none';
+    if (dropoffVenue)   { dropoffVenue.required = isDropoff; if (!isDropoff) dropoffVenue.value = ''; }
+  }
+
+  if (labelPickup)  labelPickup.addEventListener('click',  function () { setDropoff(false); });
+  if (labelDropoff) labelDropoff.addEventListener('click', function () { setDropoff(true); });
 
   /* Photo previews */
   var photoInput = document.getElementById('photoInput');
