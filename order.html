@@ -87,13 +87,17 @@
               </div>
               <div class="form-field">
                 <label class="form-label">Pickup or Drop Off</label>
-                <div class="delivery-toggle">
-                  <input type="radio" name="delivery" id="delivery-pickup" value="Pickup (Toowoomba)" checked>
-                  <label for="delivery-pickup">Pickup (Toowoomba)</label>
-                  <input type="radio" name="delivery" id="delivery-dropoff" value="Drop Off">
-                  <label for="delivery-dropoff">Drop Off</label>
+                <div class="addons-grid" style="grid-template-columns:1fr 1fr;margin-top:0">
+                  <div class="addon-item">
+                    <input type="radio" name="delivery" id="delivery-pickup" value="Pickup (Toowoomba)" checked>
+                    <label class="addon-label" for="delivery-pickup">Pickup (Toowoomba)</label>
+                  </div>
+                  <div class="addon-item">
+                    <input type="radio" name="delivery" id="delivery-dropoff" value="Drop Off">
+                    <label class="addon-label" for="delivery-dropoff">Drop Off</label>
+                  </div>
                 </div>
-                <div id="dropoff-details" style="display:none;margin-top:16px">
+                <div id="dropoff-details" style="display:none;margin-top:10px">
                   <input class="form-input" type="text" id="dropoffVenue" name="dropoff_venue" placeholder="Suburb or venue name (e.g. Rangeville, Highfields, Gabbinbar Homestead…)">
                 </div>
               </div>
