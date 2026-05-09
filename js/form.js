@@ -157,7 +157,7 @@
     });
   });
 
-  /* Submit */
+  /* ── Submit ── */
   var submitBtn = document.getElementById('submitBtn');
   form.addEventListener('submit', function (e) {
     var allValid = fields.every(function (f) { return validateField(f.inputId, f.wrapperId); });
