@@ -59,10 +59,6 @@
                 <input class="form-input" type="date" id="eventDate" name="event_date" required>
                 <span class="form-error">Please select your event date</span>
               </div>
-              <div class="form-field form-col-full">
-                <label class="form-label" for="eventLocation">Event Location <span class="optional">(optional)</span></label>
-                <input class="form-input" type="text" id="eventLocation" name="event_location" placeholder="e.g. Toowoomba, Gabbinbar Homestead, Home…">
-              </div>
             </div>
           </div>
 
@@ -91,11 +87,12 @@
               </div>
               <div class="form-field">
                 <label class="form-label">Pickup or Drop Off</label>
-                <div class="pickup-toggle">
-                  <button type="button" class="pickup-btn pickup-btn--active" id="btn-pickup" data-value="Pickup (Toowoomba)">Pickup (Toowoomba)</button>
-                  <button type="button" class="pickup-btn" id="btn-dropoff" data-value="Drop Off">Drop Off</button>
+                <div class="delivery-toggle">
+                  <input type="radio" name="delivery" id="delivery-pickup" value="Pickup (Toowoomba)" checked>
+                  <label for="delivery-pickup">Pickup (Toowoomba)</label>
+                  <input type="radio" name="delivery" id="delivery-dropoff" value="Drop Off">
+                  <label for="delivery-dropoff">Drop Off</label>
                 </div>
-                <input type="hidden" name="delivery" id="deliveryValue" value="Pickup (Toowoomba)">
                 <div id="dropoff-details" style="display:none;margin-top:16px">
                   <input class="form-input" type="text" id="dropoffVenue" name="dropoff_venue" placeholder="Suburb or venue name (e.g. Rangeville, Highfields, Gabbinbar Homestead…)">
                 </div>

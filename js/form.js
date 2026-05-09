@@ -73,23 +73,16 @@
   }
 
   /* Pickup / Drop Off toggle */
-  var btnPickup       = document.getElementById('btn-pickup');
-  var btnDropoff      = document.getElementById('btn-dropoff');
-  var deliveryValue   = document.getElementById('deliveryValue');
-  var dropoffDetails  = document.getElementById('dropoff-details');
-  var dropoffVenue    = document.getElementById('dropoffVenue');
-
-  function setDelivery(type) {
-    var isDropoff = type === 'dropoff';
-    btnPickup.classList.toggle('pickup-btn--active', !isDropoff);
-    btnDropoff.classList.toggle('pickup-btn--active', isDropoff);
-    deliveryValue.value = isDropoff ? 'Drop Off' : 'Pickup (Toowoomba)';
-    if (dropoffDetails) dropoffDetails.style.display = isDropoff ? 'block' : 'none';
-    if (dropoffVenue) { dropoffVenue.required = isDropoff; if (!isDropoff) dropoffVenue.value = ''; }
-  }
-
-  if (btnPickup)  btnPickup.addEventListener('click',  function () { setDelivery('pickup'); });
-  if (btnDropoff) btnDropoff.addEventListener('click', function () { setDelivery('dropoff'); });
+  var dropoffDetails = document.getElementById('dropoff-details');
+  var dropoffVenue   = document.getElementById('dropoffVenue');
+  var deliveryRadios = form.querySelectorAll('input[name="delivery"]');
+  deliveryRadios.forEach(function (radio) {
+    radio.addEventListener('change', function () {
+      var isDropoff = this.value === 'Drop Off';
+      if (dropoffDetails) dropoffDetails.style.display = isDropoff ? 'block' : 'none';
+      if (dropoffVenue) { dropoffVenue.required = isDropoff; if (!isDropoff) dropoffVenue.value = ''; }
+    });
+  });
 
   /* Photo previews */
   var photoInput = document.getElementById('photoInput');
