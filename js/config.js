@@ -25,15 +25,13 @@ var BB_CONFIG = {
     "Other"
   ],
 
-  cakeTypes: [
-    "Single Tier Cake",
-    "Two Tier Cake",
-    "Three Tier Cake",
-    "Four Tier Cake",
-    "Wedding Cake",
+  cakeSizes: [
+    "Single tier",
+    "Two tier",
+    "Three tier",
+    "Bento (mini)",
     "Cupcakes",
-    "Smash Cake",
-    "Not sure — advise me"
+    "Other"
   ],
 
   serves: [
@@ -49,54 +47,35 @@ var BB_CONFIG = {
 
   cakeShapes: [
     "Round",
-    "Square",
-    "Hexagonal",
     "Heart",
-    "Other / Not sure"
+    "Rectangle",
+    "Square",
+    "Oval",
+    "Other"
   ],
 
-  delivery: [
-    "Collection",
-    "Local Delivery",
-    "Not sure yet"
-  ],
-
-  spongeFlavours: [
-    "Classic Vanilla",
-    "Rich Chocolate",
-    "Lemon & Elderflower",
-    "Red Velvet",
-    "Carrot & Walnut",
-    "Salted Caramel",
-    "Strawberries & Cream",
-    "Pistachio & Rose",
-    "Funfetti",
+  cakeFlavours: [
+    "Dark Chocolate Mud",
+    "Caramel Mud",
+    "White Chocolate Mud",
     "Marble",
-    "Surprise me!"
-  ],
-
-  buttercreamFlavours: [
-    "Vanilla Swiss Meringue",
-    "Chocolate Ganache",
-    "Lemon Curd",
-    "Cream Cheese",
-    "Salted Caramel",
-    "Strawberry",
-    "Raspberry",
-    "Pistachio",
-    "Rose",
-    "Match my sponge"
+    "Red Velvet",
+    "Vanilla"
   ],
 
   fillings: [
-    "Same as buttercream",
-    "Fresh Strawberry Jam",
-    "Raspberry Coulis",
-    "Lemon Curd",
-    "Salted Caramel",
-    "Nutella",
-    "Fresh Cream & Berries",
-    "No filling"
+    "Cookie Butter",
+    "Jam",
+    "Lemon or Passionfruit Curd",
+    "Hazelnut",
+    "Pistachio",
+    "Chocolate Ganache",
+    "Oreo Crunch",
+    "Biscoff Crunch",
+    "Vanilla Biscuit Crunch",
+    "Fresh Raspberries",
+    "Fresh Strawberries",
+    "Seasonal Blueberries"
   ],
 
   cakeStyles: [

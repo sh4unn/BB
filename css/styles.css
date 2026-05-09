@@ -218,6 +218,23 @@ a { text-decoration: none; color: inherit; }
 .upload-previews { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 .upload-preview { width: 80px; height: 80px; object-fit: cover; border: 1px solid var(--clr-border); }
 
+/* ── Pickup / Drop-off Toggle ── */
+.pickup-toggle { display: flex; gap: 0; }
+.pickup-btn {
+  flex: 1; padding: 14px 18px;
+  font-family: var(--font-sans); font-size: 13px; font-weight: 400;
+  color: var(--clr-text-muted); background: var(--clr-white);
+  border: 1px solid var(--clr-border); cursor: pointer;
+  transition: all var(--transition); outline: none;
+}
+.pickup-btn:first-child { border-right: none; }
+.pickup-btn:hover { border-color: var(--clr-peony); color: var(--clr-text); }
+.pickup-btn--active {
+  background: var(--clr-primary); color: var(--clr-cream);
+  border-color: var(--clr-primary);
+}
+.pickup-btn--active:hover { background: var(--clr-primary-dark); border-color: var(--clr-primary-dark); color: var(--clr-cream); }
+
 .form-submit { text-align: center; padding-top: 56px; }
 .btn--submit { background: var(--clr-primary); color: var(--clr-cream); padding: 20px 72px; font-size: 12px; letter-spacing: 0.25em; border: none; cursor: pointer; transition: all var(--transition); }
 .btn--submit:hover:not(:disabled) { background: var(--clr-primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }

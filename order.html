@@ -61,7 +61,7 @@
               </div>
               <div class="form-field form-col-full">
                 <label class="form-label" for="eventLocation">Event Location <span class="optional">(optional)</span></label>
-                <input class="form-input" type="text" id="eventLocation" name="event_location" placeholder="e.g. Manchester, The Ivy, Home…">
+                <input class="form-input" type="text" id="eventLocation" name="event_location" placeholder="e.g. Toowoomba, Gabbinbar Homestead, Home…">
               </div>
             </div>
           </div>
@@ -73,10 +73,11 @@
               <div><h2 class="form-section__title">The Cake</h2><p class="form-section__sub">Choose your style and size</p></div>
             </div>
             <div class="form-grid">
-              <div class="form-field" id="field-cake-type">
-                <label class="form-label" for="cakeType">Cake Type <span class="required">*</span></label>
-                <select class="form-select" id="cakeType" name="cake_type" required><option value="" disabled selected>Select type…</option></select>
-                <span class="form-error">Please select a cake type</span>
+              <div class="form-field" id="field-cake-size">
+                <label class="form-label" for="cakeSize">Cake Size <span class="required">*</span></label>
+                <select class="form-select" id="cakeSize" name="cake_size" required><option value="" disabled selected>Select size…</option></select>
+                <input class="form-input" type="text" id="cakeSizeOther" name="cake_size_other" placeholder="Please describe…" style="display:none;margin-top:10px">
+                <span class="form-error">Please select a cake size</span>
               </div>
               <div class="form-field" id="field-serves">
                 <label class="form-label" for="serves">Approx. Serves <span class="required">*</span></label>
@@ -86,10 +87,18 @@
               <div class="form-field">
                 <label class="form-label" for="cakeShape">Cake Shape <span class="optional">(optional)</span></label>
                 <select class="form-select" id="cakeShape" name="cake_shape"><option value="" disabled selected>Select shape…</option></select>
+                <input class="form-input" type="text" id="cakeShapeOther" name="cake_shape_other" placeholder="Please describe your shape…" style="display:none;margin-top:10px">
               </div>
               <div class="form-field">
-                <label class="form-label" for="delivery">Collection or Delivery</label>
-                <select class="form-select" id="delivery" name="delivery"><option value="" disabled selected>Select…</option></select>
+                <label class="form-label">Pickup or Drop Off</label>
+                <div class="pickup-toggle">
+                  <button type="button" class="pickup-btn pickup-btn--active" id="btn-pickup" data-value="Pickup (Toowoomba)">Pickup (Toowoomba)</button>
+                  <button type="button" class="pickup-btn" id="btn-dropoff" data-value="Drop Off">Drop Off</button>
+                </div>
+                <input type="hidden" name="delivery" id="deliveryValue" value="Pickup (Toowoomba)">
+                <div id="dropoff-details" style="display:none;margin-top:16px">
+                  <input class="form-input" type="text" id="dropoffVenue" name="dropoff_venue" placeholder="Suburb or venue name (e.g. Rangeville, Highfields, Gabbinbar Homestead…)">
+                </div>
               </div>
             </div>
           </div>
@@ -100,16 +109,11 @@
               <span class="form-section__number">03</span>
               <div><h2 class="form-section__title">Flavours</h2><p class="form-section__sub">The taste behind the beauty</p></div>
             </div>
-            <div class="form-grid form-grid--3">
-              <div class="form-field" id="field-sponge">
-                <label class="form-label" for="sponge">Sponge <span class="required">*</span></label>
-                <select class="form-select" id="sponge" name="sponge_flavour" required><option value="" disabled selected>Select flavour…</option></select>
-                <span class="form-error">Please select a sponge flavour</span>
-              </div>
-              <div class="form-field" id="field-buttercream">
-                <label class="form-label" for="buttercream">Buttercream <span class="required">*</span></label>
-                <select class="form-select" id="buttercream" name="buttercream_flavour" required><option value="" disabled selected>Select flavour…</option></select>
-                <span class="form-error">Please select a buttercream flavour</span>
+            <div class="form-grid">
+              <div class="form-field" id="field-cake-flavour">
+                <label class="form-label" for="cakeFlavour">Cake Flavour <span class="required">*</span></label>
+                <select class="form-select" id="cakeFlavour" name="cake_flavour" required><option value="" disabled selected>Select flavour…</option></select>
+                <span class="form-error">Please select a cake flavour</span>
               </div>
               <div class="form-field">
                 <label class="form-label" for="filling">Filling <span class="optional">(optional)</span></label>
@@ -178,7 +182,7 @@
               </div>
               <div class="form-field" id="field-phone">
                 <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
-                <input class="form-input" type="tel" id="phone" name="phone" placeholder="07xxx xxxxxx" required autocomplete="tel">
+                <input class="form-input" type="tel" id="phone" name="phone" placeholder="04xx xxx xxx" required autocomplete="tel">
                 <span class="form-error">Please enter your phone number</span>
               </div>
               <div class="form-field form-col-full" id="field-email">
