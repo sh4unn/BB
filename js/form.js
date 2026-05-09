@@ -1,18 +1,69 @@
-/* Order form — validation, photo previews, drag & drop */
+/* Order form — populate dropdowns from config, photo previews, validation */
 (function () {
   var form = document.getElementById('orderForm');
   if (!form) return;
 
-  /* ── Date: set minimum to today ── */
+  /* ── Populate selects from config.js ── */
+  if (typeof BB_CONFIG !== 'undefined') {
+    fillSelect('occasion',    BB_CONFIG.occasions);
+    fillSelect('cakeType',    BB_CONFIG.cakeTypes);
+    fillSelect('serves',      BB_CONFIG.serves);
+    fillSelect('cakeShape',   BB_CONFIG.cakeShapes);
+    fillSelect('delivery',    BB_CONFIG.delivery);
+    fillSelect('sponge',      BB_CONFIG.spongeFlavours);
+    fillSelect('buttercream', BB_CONFIG.buttercreamFlavours);
+    fillSelect('filling',     BB_CONFIG.fillings);
+    fillSelect('cakeStyle',   BB_CONFIG.cakeStyles);
+    fillSelect('heardFrom',   BB_CONFIG.heardFrom);
+    fillAddons(BB_CONFIG.addons);
+  }
+
+  function fillSelect(id, options) {
+    var select = document.getElementById(id);
+    if (!select) return;
+    var placeholder = select.querySelector('option[disabled]');
+    select.innerHTML = '';
+    if (placeholder) select.appendChild(placeholder);
+    options.forEach(function (text) {
+      var opt = document.createElement('option');
+      opt.textContent = text;
+      select.appendChild(opt);
+    });
+  }
+
+  function fillAddons(addons) {
+    var grid = document.getElementById('addonsGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    addons.forEach(function (addon) {
+      var safeId = 'addon-' + addon.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      var item = document.createElement('div');
+      item.className = 'addon-item';
+      var checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.id = safeId;
+      checkbox.name = 'addons';
+      checkbox.value = addon;
+      var label = document.createElement('label');
+      label.className = 'addon-label';
+      label.htmlFor = safeId;
+      label.textContent = addon;
+      item.appendChild(checkbox);
+      item.appendChild(label);
+      grid.appendChild(item);
+    });
+  }
+
+  /* ── Minimum event date = today ── */
   var dateInput = document.getElementById('eventDate');
   if (dateInput) {
     dateInput.min = new Date().toISOString().split('T')[0];
   }
 
   /* ── Photo upload preview ── */
-  var photoInput   = document.getElementById('photoInput');
-  var previews     = document.getElementById('uploadPreviews');
-  var uploadZone   = document.getElementById('uploadZone');
+  var photoInput = document.getElementById('photoInput');
+  var previews   = document.getElementById('uploadPreviews');
+  var uploadZone = document.getElementById('uploadZone');
 
   if (photoInput && previews) {
     photoInput.addEventListener('change', function () {
@@ -39,6 +90,7 @@
   }
 
   function renderPreviews(files) {
+    if (!previews) return;
     previews.innerHTML = '';
     files.forEach(function (file) {
       if (!file.type.startsWith('image/')) return;
@@ -56,15 +108,15 @@
 
   /* ── Validation ── */
   var fields = [
-    { inputId: 'occasion',   wrapperId: 'field-occasion' },
-    { inputId: 'eventDate',  wrapperId: 'field-event-date' },
-    { inputId: 'cakeType',   wrapperId: 'field-cake-type' },
-    { inputId: 'serves',     wrapperId: 'field-serves' },
-    { inputId: 'sponge',     wrapperId: 'field-sponge' },
-    { inputId: 'buttercream',wrapperId: 'field-buttercream' },
-    { inputId: 'fullName',   wrapperId: 'field-name' },
-    { inputId: 'phone',      wrapperId: 'field-phone' },
-    { inputId: 'email',      wrapperId: 'field-email' },
+    { inputId: 'occasion',    wrapperId: 'field-occasion' },
+    { inputId: 'eventDate',   wrapperId: 'field-event-date' },
+    { inputId: 'cakeType',    wrapperId: 'field-cake-type' },
+    { inputId: 'serves',      wrapperId: 'field-serves' },
+    { inputId: 'sponge',      wrapperId: 'field-sponge' },
+    { inputId: 'buttercream', wrapperId: 'field-buttercream' },
+    { inputId: 'fullName',    wrapperId: 'field-name' },
+    { inputId: 'phone',       wrapperId: 'field-phone' },
+    { inputId: 'email',       wrapperId: 'field-email' },
   ];
 
   function isValid(input) {
@@ -83,7 +135,6 @@
     return valid;
   }
 
-  /* Live feedback on blur */
   fields.forEach(function (f) {
     var input = document.getElementById(f.inputId);
     if (!input) return;
@@ -98,24 +149,23 @@
     });
   });
 
-  /* Submit */
+  /* ── Submit ── */
   var submitBtn = document.getElementById('submitBtn');
 
   form.addEventListener('submit', function (e) {
     var allValid = fields.every(function (f) {
       return validateField(f.inputId, f.wrapperId);
     });
-
     if (!allValid) {
       e.preventDefault();
       var firstError = form.querySelector('.has-error');
       if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
-
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
     }
   });
+
 }());

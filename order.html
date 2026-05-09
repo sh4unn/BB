@@ -18,15 +18,15 @@
     </a>
     <ul class="nav__links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
       <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="order.html" class="nav__cta">Order Now</a></li>
     </ul>
     <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- Page Hero -->
   <div class="order-hero">
     <div class="container">
       <p class="order-hero__eyebrow">Bespoke Cake Enquiry</p>
@@ -35,7 +35,6 @@
     </div>
   </div>
 
-  <!-- Order Form -->
   <section class="order-section">
     <div class="container">
       <div class="form-wrap">
@@ -46,12 +45,11 @@
           method="POST"
           enctype="multipart/form-data"
         >
-          <!-- Formspree config -->
           <input type="hidden" name="_subject" value="New Cake Enquiry — Bloom &amp; Buttercream">
           <input type="hidden" name="_next" value="thank-you.html">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-          <!-- ── 01: THE OCCASION ── -->
+          <!-- 01: THE OCCASION -->
           <div class="form-section">
             <div class="form-section__header">
               <span class="form-section__number">01</span>
@@ -65,17 +63,6 @@
                 <label class="form-label" for="occasion">Occasion <span class="required">*</span></label>
                 <select class="form-select" id="occasion" name="occasion" required>
                   <option value="" disabled selected>Select occasion…</option>
-                  <option>Birthday</option>
-                  <option>Wedding</option>
-                  <option>Anniversary</option>
-                  <option>Baby Shower</option>
-                  <option>Gender Reveal</option>
-                  <option>Christening / Baptism</option>
-                  <option>Engagement</option>
-                  <option>Graduation</option>
-                  <option>Hen Party</option>
-                  <option>Corporate Event</option>
-                  <option>Other</option>
                 </select>
                 <span class="form-error">Please select an occasion</span>
               </div>
@@ -91,7 +78,7 @@
             </div>
           </div>
 
-          <!-- ── 02: THE CAKE ── -->
+          <!-- 02: THE CAKE -->
           <div class="form-section">
             <div class="form-section__header">
               <span class="form-section__number">02</span>
@@ -105,14 +92,6 @@
                 <label class="form-label" for="cakeType">Cake Type <span class="required">*</span></label>
                 <select class="form-select" id="cakeType" name="cake_type" required>
                   <option value="" disabled selected>Select type…</option>
-                  <option>Single Tier Cake</option>
-                  <option>Two Tier Cake</option>
-                  <option>Three Tier Cake</option>
-                  <option>Four Tier Cake</option>
-                  <option>Wedding Cake</option>
-                  <option>Cupcakes</option>
-                  <option>Smash Cake</option>
-                  <option>Not sure — advise me</option>
                 </select>
                 <span class="form-error">Please select a cake type</span>
               </div>
@@ -120,14 +99,6 @@
                 <label class="form-label" for="serves">Approx. Serves <span class="required">*</span></label>
                 <select class="form-select" id="serves" name="serves" required>
                   <option value="" disabled selected>Number of guests…</option>
-                  <option>Up to 10</option>
-                  <option>10 – 20</option>
-                  <option>20 – 30</option>
-                  <option>30 – 50</option>
-                  <option>50 – 75</option>
-                  <option>75 – 100</option>
-                  <option>100+</option>
-                  <option>Not sure</option>
                 </select>
                 <span class="form-error">Please select a serving size</span>
               </div>
@@ -135,26 +106,18 @@
                 <label class="form-label" for="cakeShape">Cake Shape <span class="optional">(optional)</span></label>
                 <select class="form-select" id="cakeShape" name="cake_shape">
                   <option value="" disabled selected>Select shape…</option>
-                  <option>Round</option>
-                  <option>Square</option>
-                  <option>Hexagonal</option>
-                  <option>Heart</option>
-                  <option>Other / Not sure</option>
                 </select>
               </div>
               <div class="form-field">
                 <label class="form-label" for="delivery">Collection or Delivery</label>
                 <select class="form-select" id="delivery" name="delivery">
                   <option value="" disabled selected>Select…</option>
-                  <option>Collection</option>
-                  <option>Local Delivery</option>
-                  <option>Not sure yet</option>
                 </select>
               </div>
             </div>
           </div>
 
-          <!-- ── 03: FLAVOURS ── -->
+          <!-- 03: FLAVOURS -->
           <div class="form-section">
             <div class="form-section__header">
               <span class="form-section__number">03</span>
@@ -168,17 +131,6 @@
                 <label class="form-label" for="sponge">Sponge <span class="required">*</span></label>
                 <select class="form-select" id="sponge" name="sponge_flavour" required>
                   <option value="" disabled selected>Select flavour…</option>
-                  <option>Classic Vanilla</option>
-                  <option>Rich Chocolate</option>
-                  <option>Lemon &amp; Elderflower</option>
-                  <option>Red Velvet</option>
-                  <option>Carrot &amp; Walnut</option>
-                  <option>Salted Caramel</option>
-                  <option>Strawberries &amp; Cream</option>
-                  <option>Pistachio &amp; Rose</option>
-                  <option>Funfetti</option>
-                  <option>Marble</option>
-                  <option>Surprise me!</option>
                 </select>
                 <span class="form-error">Please select a sponge flavour</span>
               </div>
@@ -186,16 +138,6 @@
                 <label class="form-label" for="buttercream">Buttercream <span class="required">*</span></label>
                 <select class="form-select" id="buttercream" name="buttercream_flavour" required>
                   <option value="" disabled selected>Select flavour…</option>
-                  <option>Vanilla Swiss Meringue</option>
-                  <option>Chocolate Ganache</option>
-                  <option>Lemon Curd</option>
-                  <option>Cream Cheese</option>
-                  <option>Salted Caramel</option>
-                  <option>Strawberry</option>
-                  <option>Raspberry</option>
-                  <option>Pistachio</option>
-                  <option>Rose</option>
-                  <option>Match my sponge</option>
                 </select>
                 <span class="form-error">Please select a buttercream flavour</span>
               </div>
@@ -203,14 +145,6 @@
                 <label class="form-label" for="filling">Filling <span class="optional">(optional)</span></label>
                 <select class="form-select" id="filling" name="filling">
                   <option value="" disabled selected>Select filling…</option>
-                  <option>Same as buttercream</option>
-                  <option>Fresh Strawberry Jam</option>
-                  <option>Raspberry Coulis</option>
-                  <option>Lemon Curd</option>
-                  <option>Salted Caramel</option>
-                  <option>Nutella</option>
-                  <option>Fresh Cream &amp; Berries</option>
-                  <option>No filling</option>
                 </select>
               </div>
             </div>
@@ -220,7 +154,7 @@
             </div>
           </div>
 
-          <!-- ── 04: DESIGN ── -->
+          <!-- 04: DESIGN -->
           <div class="form-section">
             <div class="form-section__header">
               <span class="form-section__number">04</span>
@@ -234,15 +168,6 @@
                 <label class="form-label" for="cakeStyle">Cake Style <span class="optional">(optional)</span></label>
                 <select class="form-select" id="cakeStyle" name="cake_style">
                   <option value="" disabled selected>Select style…</option>
-                  <option>Elegant &amp; Minimalist</option>
-                  <option>Rustic &amp; Textured</option>
-                  <option>Modern &amp; Geometric</option>
-                  <option>Whimsical &amp; Playful</option>
-                  <option>Floral &amp; Botanical</option>
-                  <option>Classic &amp; Traditional</option>
-                  <option>Sculpted / 3D</option>
-                  <option>Vintage / Retro</option>
-                  <option>I'm open to suggestions</option>
                 </select>
               </div>
               <div class="form-field">
@@ -251,54 +176,11 @@
               </div>
             </div>
 
-            <!-- Add-ons -->
             <div class="form-field" style="margin-top:32px">
               <label class="form-label">Add-ons &amp; Finishing Touches <span class="optional">(select all that apply)</span></label>
-              <div class="addons-grid">
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-fresh-flowers" name="addons" value="Fresh Florals">
-                  <label class="addon-label" for="addon-fresh-flowers">Fresh Florals</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-sugar-flowers" name="addons" value="Sugar Flowers">
-                  <label class="addon-label" for="addon-sugar-flowers">Sugar Flowers</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-gold-leaf" name="addons" value="Gold Leaf Accents">
-                  <label class="addon-label" for="addon-gold-leaf">Gold Leaf Accents</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-drip" name="addons" value="Chocolate Drip">
-                  <label class="addon-label" for="addon-drip">Chocolate Drip</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-glitter" name="addons" value="Edible Glitter">
-                  <label class="addon-label" for="addon-glitter">Edible Glitter</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-fruit" name="addons" value="Fresh Fruit Topping">
-                  <label class="addon-label" for="addon-fruit">Fresh Fruit</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-topper" name="addons" value="Custom Cake Topper">
-                  <label class="addon-label" for="addon-topper">Custom Topper</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-fondant" name="addons" value="Fondant Figures">
-                  <label class="addon-label" for="addon-fondant">Fondant Figures</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-painted" name="addons" value="Hand-painted Details">
-                  <label class="addon-label" for="addon-painted">Hand-painted Details</label>
-                </div>
-                <div class="addon-item">
-                  <input type="checkbox" id="addon-metallic" name="addons" value="Metallic Finish">
-                  <label class="addon-label" for="addon-metallic">Metallic Finish</label>
-                </div>
-              </div>
+              <div class="addons-grid" id="addonsGrid"></div>
             </div>
 
-            <!-- Photo Upload -->
             <div class="form-field" style="margin-top:36px">
               <label class="form-label">Inspiration Photos <span class="optional">(optional — up to 5 images)</span></label>
               <div class="upload-zone" id="uploadZone">
@@ -316,14 +198,13 @@
               <div class="upload-previews" id="uploadPreviews"></div>
             </div>
 
-            <!-- Design Notes -->
             <div class="form-field" style="margin-top:24px">
               <label class="form-label" for="designNotes">Design Notes <span class="optional">(optional)</span></label>
               <textarea class="form-textarea" id="designNotes" name="design_notes" rows="5" placeholder="Describe your vision — colours, textures, themes, any words that inspire you. The more detail the better!"></textarea>
             </div>
           </div>
 
-          <!-- ── 05: YOUR DETAILS ── -->
+          <!-- 05: YOUR DETAILS -->
           <div class="form-section">
             <div class="form-section__header">
               <span class="form-section__number">05</span>
@@ -352,20 +233,12 @@
                 <label class="form-label" for="heardFrom">How did you find us? <span class="optional">(optional)</span></label>
                 <select class="form-select" id="heardFrom" name="heard_from">
                   <option value="" disabled selected>Select…</option>
-                  <option>Instagram</option>
-                  <option>Facebook</option>
-                  <option>TikTok</option>
-                  <option>Pinterest</option>
-                  <option>Word of mouth / Recommendation</option>
-                  <option>Google</option>
-                  <option>Wedding fair</option>
-                  <option>Other</option>
                 </select>
               </div>
             </div>
           </div>
 
-          <!-- ── 06: ANYTHING ELSE ── -->
+          <!-- 06: ANYTHING ELSE -->
           <div class="form-section" style="border-bottom:none;margin-bottom:0;padding-bottom:0">
             <div class="form-section__header">
               <span class="form-section__number">06</span>
@@ -379,7 +252,6 @@
             </div>
           </div>
 
-          <!-- ── SUBMIT ── -->
           <div class="form-submit">
             <button type="submit" class="btn btn--submit" id="submitBtn">Submit Enquiry</button>
             <p class="form-submit__note">
@@ -400,6 +272,7 @@
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
   <script src="js/form.js"></script>
 </body>
