@@ -1,4 +1,3 @@
-/* Navigation — scroll effect & mobile menu */
 (function () {
   var nav = document.getElementById('nav');
   var hamburger = document.getElementById('hamburger');
@@ -16,7 +15,6 @@
       hamburger.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
