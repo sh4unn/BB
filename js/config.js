@@ -66,7 +66,8 @@ var BB_CONFIG = {
   fillings: [
     "Cookie Butter",
     "Jam",
-    "Lemon or Passionfruit Curd",
+    "Lemon Curd",
+    "Passionfruit Curd",
     "Hazelnut",
     "Pistachio",
     "Chocolate Ganache",
