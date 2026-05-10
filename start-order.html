@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="pics/favicon.png" type="image/png">
 </head>
-<body>
+<body class="has-custom-bar">
 
   <nav class="nav nav--over-dark" id="nav">
     <a href="index.html" class="nav__logo">
@@ -27,92 +27,91 @@
     </button>
   </nav>
 
+  <!-- Sticky custom bar — always visible at bottom -->
+  <div class="custom-bar">
+    <div class="custom-bar__inner">
+      <p class="custom-bar__label">Something unique in mind?</p>
+      <a href="order.html" class="custom-bar__btn">Build it from scratch →</a>
+    </div>
+  </div>
+
   <div class="start-hero">
     <div class="container">
       <p class="start-hero__eyebrow">With Love, Always</p>
       <h1 class="start-hero__title">What are we<br><em>creating for you?</em></h1>
-      <p class="start-hero__sub">Pick a signature style below and we'll pre-fill your order — or scroll down to build something completely your own.</p>
     </div>
   </div>
 
   <section class="start-section">
     <div class="container">
+      <div class="pick-grid">
 
-      <p class="start-section__label">Our Signature Styles</p>
-
-      <div class="pick-cards">
-
-        <a href="cake-classic-celebration.html" class="pick-card">
-          <div class="pick-card__image pick-card__image--placeholder"></div>
-          <div class="pick-card__body">
-            <p class="pick-card__eyebrow">Elegant · Celebratory</p>
-            <h2 class="pick-card__title">Classic <em>Celebration</em></h2>
-            <p class="pick-card__desc">Beautifully tiered, clean lines, every detail personalised. The timeless choice for birthdays, graduations &amp; milestones.</p>
-            <span class="pick-card__cta">Order this style <span class="pick-card__arrow">→</span></span>
+        <a href="cake-classic-celebration.html" class="pick-tile">
+          <div class="pick-tile__img pick-tile__img--classic"></div>
+          <div class="pick-tile__overlay">
+            <p class="pick-tile__eyebrow">Elegant · Celebratory</p>
+            <h2 class="pick-tile__title">Classic <em>Celebration</em></h2>
           </div>
         </a>
 
-        <a href="cake-vintage-heart.html" class="pick-card">
-          <div class="pick-card__image pick-card__image--placeholder"></div>
-          <div class="pick-card__body">
-            <p class="pick-card__eyebrow">Romantic · Timeless</p>
-            <h2 class="pick-card__title">Vintage <em>Heart</em></h2>
-            <p class="pick-card__desc">A heart-shaped masterpiece with soft florals and delicate vintage textures — made for love and celebrations of it.</p>
-            <span class="pick-card__cta">Order this style <span class="pick-card__arrow">→</span></span>
+        <a href="cake-vintage-heart.html" class="pick-tile">
+          <div class="pick-tile__img pick-tile__img--heart"></div>
+          <div class="pick-tile__overlay">
+            <p class="pick-tile__eyebrow">Romantic · Timeless</p>
+            <h2 class="pick-tile__title">Vintage <em>Heart</em></h2>
           </div>
         </a>
 
-        <a href="cake-wedding.html" class="pick-card">
-          <div class="pick-card__image pick-card__image--placeholder"></div>
-          <div class="pick-card__body">
-            <p class="pick-card__eyebrow">Bespoke · Elegant</p>
-            <h2 class="pick-card__title">Wedding <em>Cake</em></h2>
-            <p class="pick-card__desc">Your centrepiece. Multi-tier, handcrafted to your venue and vision — for the most important day of your life.</p>
-            <span class="pick-card__cta">Order this style <span class="pick-card__arrow">→</span></span>
+        <a href="cake-wedding.html" class="pick-tile">
+          <div class="pick-tile__img pick-tile__img--wedding"></div>
+          <div class="pick-tile__overlay">
+            <p class="pick-tile__eyebrow">Bespoke · Elegant</p>
+            <h2 class="pick-tile__title">Wedding <em>Cake</em></h2>
           </div>
         </a>
 
-        <a href="cake-naked-rustic.html" class="pick-card">
-          <div class="pick-card__image pick-card__image--placeholder"></div>
-          <div class="pick-card__body">
-            <p class="pick-card__eyebrow">Organic · Natural</p>
-            <h2 class="pick-card__title">Naked <em>&amp; Rustic</em></h2>
-            <p class="pick-card__desc">Exposed layers, lush florals, effortless charm. Perfect for garden parties, intimate celebrations &amp; earthy aesthetics.</p>
-            <span class="pick-card__cta">Order this style <span class="pick-card__arrow">→</span></span>
+        <a href="cake-naked-rustic.html" class="pick-tile">
+          <div class="pick-tile__img pick-tile__img--rustic"></div>
+          <div class="pick-tile__overlay">
+            <p class="pick-tile__eyebrow">Organic · Natural</p>
+            <h2 class="pick-tile__title">Naked <em>&amp; Rustic</em></h2>
           </div>
         </a>
 
-        <a href="cake-bento.html" class="pick-card">
-          <div class="pick-card__image pick-card__image--placeholder"></div>
-          <div class="pick-card__body">
-            <p class="pick-card__eyebrow">Petite · Personal</p>
-            <h2 class="pick-card__title">Bento <em>&amp; Mini</em></h2>
-            <p class="pick-card__desc">Small in size, big on detail. Individual cakes made for gifting, party favours, or a very special personal treat.</p>
-            <span class="pick-card__cta">Order this style <span class="pick-card__arrow">→</span></span>
+        <a href="cake-bento.html" class="pick-tile">
+          <div class="pick-tile__img pick-tile__img--bento"></div>
+          <div class="pick-tile__overlay">
+            <p class="pick-tile__eyebrow">Petite · Personal</p>
+            <h2 class="pick-tile__title">Bento <em>&amp; Mini</em></h2>
           </div>
         </a>
 
-        <a href="cupcakes.html" class="pick-card">
-          <div class="pick-card__image pick-card__image--placeholder"></div>
-          <div class="pick-card__body">
-            <p class="pick-card__eyebrow">Sweet · Celebratory</p>
-            <h2 class="pick-card__title">Custom <em>Cupcakes</em></h2>
-            <p class="pick-card__desc">Scratch-baked, beautifully decorated, and made to your brief. Order by the half dozen or scale up for a crowd.</p>
-            <span class="pick-card__cta">Order cupcakes <span class="pick-card__arrow">→</span></span>
+        <a href="cupcakes.html" class="pick-tile">
+          <div class="pick-tile__img pick-tile__img--cupcakes"></div>
+          <div class="pick-tile__overlay">
+            <p class="pick-tile__eyebrow">Sweet · Celebratory</p>
+            <h2 class="pick-tile__title">Custom <em>Cupcakes</em></h2>
           </div>
         </a>
 
       </div>
+    </div>
+  </section>
 
-      <div class="start-custom">
-        <div class="start-custom__inner">
-          <p class="start-custom__eyebrow">Something else in mind?</p>
-          <h2 class="start-custom__title">Build something<br><em>completely your own</em></h2>
-          <p class="start-custom__desc">Have a vision that doesn't fit a style above? Tell us everything — from shape and flavour to the finest detail — and we'll bring it to life.</p>
-          <a href="order.html" class="btn btn--primary">Start from Scratch</a>
-        </div>
+  <section class="insta-section" id="instagram">
+    <div class="container">
+      <p class="section-eyebrow">Get Inspired</p>
+      <a href="https://instagram.com/bloomandbuttercream" class="insta-handle" target="_blank" rel="noopener">@bloomandbuttercream</a>
+      <div class="insta-feed">
+        <behold-widget feed-id="IJFzatjDtzdDnfz5L7L2"></behold-widget>
+        <script>
+          (() => {
+            const d=document,s=d.createElement("script");s.type="module";
+            s.src="https://w.behold.so/widget.js";d.head.append(s);
+          })();
+        </script>
       </div>
-
+      <a href="https://instagram.com/bloomandbuttercream" class="insta-cta" target="_blank" rel="noopener">View more on Instagram</a>
     </div>
   </section>
 
