@@ -110,17 +110,15 @@
       <p class="section-eyebrow">Follow Along</p>
       <a href="https://instagram.com/bloomandbuttercream" class="insta-handle" target="_blank" rel="noopener">@bloomandbuttercream</a>
 
-      <!--
-        INSTAGRAM FEED SETUP (5 mins, free):
-        1. Go to behold.so and sign up free
-        2. Connect your Instagram account
-        3. Create a widget, choose Grid layout
-        4. Copy your Widget ID (looks like "AbCdEfGh")
-        5. Replace YOUR_BEHOLD_ID below with your Widget ID
-        6. Delete this comment when done
-      -->
-      <div data-behold-id="YOUR_BEHOLD_ID" class="insta-feed"></div>
-      <script defer src="https://w.behold.so/widget.js"></script>
+      <div class="insta-feed">
+        <behold-widget feed-id="IJFzatjDtzdDnfz5L7L2"></behold-widget>
+        <script>
+          (() => {
+            const d=document,s=d.createElement("script");s.type="module";
+            s.src="https://w.behold.so/widget.js";d.head.append(s);
+          })();
+        </script>
+      </div>
 
       <a href="https://instagram.com/bloomandbuttercream" class="insta-cta" target="_blank" rel="noopener">View more on Instagram</a>
     </div>

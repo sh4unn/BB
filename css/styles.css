@@ -280,26 +280,95 @@ a { text-decoration: none; color: inherit; }
   .nav { padding: 24px 40px; } .nav.scrolled { padding: 14px 40px; }
   .hero__content { padding: 120px 48px 80px; } .container { padding: 0 32px; }
 }
+
 @media (max-width: 768px) {
-  .nav { padding: 20px 24px; } .nav.scrolled { padding: 14px 24px; }
-  .nav__links { display: none; position: fixed; inset: 0; background: var(--clr-white); flex-direction: column; justify-content: center; align-items: center; gap: 36px; z-index: 99; }
+  /* Nav */
+  .nav { padding: 18px 20px; } .nav.scrolled { padding: 12px 20px; }
+  .nav__links {
+    display: none; position: fixed; inset: 0;
+    background: var(--clr-white); flex-direction: column;
+    justify-content: center; align-items: center; gap: 36px; z-index: 99;
+  }
   .nav__links.open { display: flex; }
-  .nav__links a:not(.nav__cta) { color: var(--clr-text) !important; font-size: 14px; }
+  .nav__links a:not(.nav__cta) { color: var(--clr-text) !important; font-size: 15px; letter-spacing: 0.12em; }
+  .nav__cta { padding: 14px 36px !important; font-size: 12px; }
   .nav__hamburger { display: flex; }
   .nav__hamburger span { background: var(--clr-primary) !important; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero__content { padding: 110px 24px 60px; } .hero__image-wrap { height: 55vw; }
-  .insta-section { padding: 72px 0; } .cta-banner { padding: 88px 0; }
-  .container { padding: 0 24px; }
-  .form-grid, .form-grid--3 { grid-template-columns: 1fr; } .form-col-full { grid-column: 1; }
-  .form-section__number { font-size: 40px; } .addons-grid { grid-template-columns: 1fr 1fr; }
-  .order-hero { padding: 120px 0 64px; } .menu-grid { grid-template-columns: 1fr 1fr; }
-  .style-cards { grid-template-columns: 1fr; gap: 24px; }
-  .showcase-layout { grid-template-columns: 1fr; gap: 40px; }
-  .showcase-image { position: static; height: 300px; }
+
+  /* Hero — image on top, content below */
+  .hero { grid-template-columns: 1fr; grid-template-rows: auto auto; min-height: auto; }
+  .hero__image-wrap { order: -1; height: 60vw; min-height: 240px; }
+  .hero__content { order: 1; padding: 48px 24px 64px; align-items: center; text-align: center; }
+  .hero__sub { max-width: 100%; }
+  .hero__title { font-size: clamp(32px,7vw,44px); }
+  .btn--primary { width: 100%; text-align: center; padding: 18px 24px; }
+
+  /* Style cards — 2 compact columns */
+  .styles-section { padding: 64px 0; }
+  .styles-section__sub { margin-bottom: 36px; }
+  .style-cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .style-card__image { height: 180px; }
+  .style-card__body { padding: 18px; }
+  .style-card__title { font-size: 18px; margin-bottom: 6px; }
+  .style-card__desc { font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+  .style-card__link { font-size: 10px; }
+
+  /* Instagram & CTA */
+  .insta-section { padding: 64px 0; }
+  .cta-banner { padding: 72px 0; }
+  .btn--cream { width: 100%; max-width: 320px; text-align: center; }
+
+  /* Container */
+  .container { padding: 0 20px; }
+
+  /* Forms */
+  .form-grid, .form-grid--3 { grid-template-columns: 1fr; }
+  .form-col-full { grid-column: 1; }
+  .form-section { margin-bottom: 48px; padding-bottom: 48px; }
+  .form-section__header { gap: 16px; margin-bottom: 28px; }
+  .form-section__number { font-size: 36px; }
+  .form-section__title { font-size: 22px; }
+  .addons-grid { grid-template-columns: 1fr 1fr; }
+  .addon-label { padding: 14px 12px; font-size: 13px; min-height: 48px; }
+
+  /* Order & menu page */
+  .order-hero { padding: 108px 0 56px; }
+  .menu-hero { padding: 120px 0 64px; }
+  .menu-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Showcase */
+  .showcase-hero { padding: 120px 0 60px; }
+  .showcase-body { padding: 56px 0 72px; }
+  .showcase-layout { grid-template-columns: 1fr; gap: 36px; }
+  .showcase-image { position: static; height: 72vw; max-height: 360px; }
 }
+
 @media (max-width: 480px) {
-  .addons-grid { grid-template-columns: 1fr; } .upload-zone { padding: 36px 20px; }
-  .btn--submit { padding: 18px 48px; } .menu-grid { grid-template-columns: 1fr; }
-  .footer__links { gap: 20px; }
+  /* Style cards — single column on very small screens */
+  .style-cards { grid-template-columns: 1fr; gap: 20px; }
+  .style-card__image { height: 56vw; }
+  .style-card__body { padding: 20px; }
+  .style-card__title { font-size: 20px; }
+  .style-card__desc { display: block; }
+
+  /* Addons single column for tiny screens */
+  .addons-grid { grid-template-columns: 1fr; }
+  .addon-label { min-height: 52px; }
+
+  /* Upload zone */
+  .upload-zone { padding: 32px 16px; }
+  .upload-title { font-size: 16px; }
+
+  /* Submit button full width */
+  .btn--submit { width: 100%; padding: 20px 24px; font-size: 11px; }
+  .form-submit { padding-top: 40px; }
+
+  /* Menu */
+  .menu-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer__links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+
+  /* Container tighter */
+  .container { padding: 0 16px; }
 }
