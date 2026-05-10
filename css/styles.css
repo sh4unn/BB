@@ -104,7 +104,8 @@ a { text-decoration: none; color: inherit; }
 .hero__sub { font-size: 15px; color: var(--clr-text-muted); max-width: 380px; line-height: 1.85; margin-bottom: 48px; }
 .hero__image-wrap { height: 100vh; overflow: hidden; }
 .hero__image-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.hero__image-placeholder { height: 100%; background: var(--clr-primary); display: flex; align-items: center; justify-content: center; }
+.hero__image-placeholder { height: 100%; background: var(--clr-cream-dark); display: flex; align-items: center; justify-content: center; }
+.hero__brand-logo { width: min(380px, 75%); height: auto; border-radius: 4px; box-shadow: 0 24px 80px rgba(42,26,31,0.14); }
 
 /* ── Instagram Feed ── */
 .insta-section { padding: 100px 0; background: var(--clr-white); text-align: center; }
